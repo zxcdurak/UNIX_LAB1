@@ -13,7 +13,6 @@ srcfile=$1
 [ -f "$srcfile" ] || { echo "$0: '$srcfile' is not a regular file" >&2; exit 1; }
 [ -r "$srcfile" ] || { echo "$0: '$srcfile' is not readable" >&2; exit 1; }
 
-srcdir=$(dirname -- "$srcfile")
 srcbase=$(basename -- "$srcfile")
 
 case "$srcfile" in
@@ -72,4 +71,4 @@ case "$srcbase" in
         ;;
 esac
 
-cp -- "$TMPDIR/$outname" "$srcdir/$outname"
+cp -- "$TMPDIR/$outname" "./$outname"
